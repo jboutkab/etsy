@@ -31,14 +31,14 @@ func main() {
 	if err != nil {
 		log.Fatal("Config file not found in current directory...")
 	} else {
-	
+
 		log.Info("Config found...")
 	}
 
 	consumerKey := configviper.GetString("etsy.ConsumerKey")
 	consumerSecret := configviper.GetString("etsy.ConsumerSecret")
 	callbackURL := configviper.GetString("etsy.CallbackURL")
-requestTokenURL := configviper.GetString("etsy.RequestTokenURL")
+	requestTokenURL := configviper.GetString("etsy.RequestTokenURL")
 	accessTokenURL := configviper.GetString("etsy.AccessTokenURL")
 
 	ßetsyEndpoint := oauth1.Endpoint{RequestTokenURL: requestTokenURL, AccessTokenURL: accessTokenURL}
@@ -64,7 +64,6 @@ requestTokenURL := configviper.GetString("etsy.RequestTokenURL")
 	fmt.Println("Consumer was granted an access token to act on behalf of a user.")
 	fmt.Printf("token: %s\nsecret: %s\n", accessToken.Token, accessToken.TokenSecret)
 
-	
 }
 
 func receivePIN(requestToken string, requestSecret string) (*oauth1.Token, error) {
