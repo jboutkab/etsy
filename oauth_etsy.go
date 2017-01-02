@@ -1,14 +1,11 @@
 package main
 
 import (
-	"github.com/dghubble/oauth1"
-
 	"fmt"
+	"github.com/dghubble/oauth1"
 	"github.com/op/go-logging"
 	"github.com/spf13/viper"
 )
-
-//1d9d5612
 
 var config oauth1.Config
 
@@ -41,7 +38,7 @@ func main() {
 	requestTokenURL := configviper.GetString("etsy.RequestTokenURL")
 	accessTokenURL := configviper.GetString("etsy.AccessTokenURL")
 
-	ßetsyEndpoint := oauth1.Endpoint{RequestTokenURL: requestTokenURL, AccessTokenURL: accessTokenURL}
+	etsyEndpoint := oauth1.Endpoint{RequestTokenURL: requestTokenURL, AccessTokenURL: accessTokenURL}
 
 	fmt.Println(etsyEndpoint.AccessTokenURL)
 
