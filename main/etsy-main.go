@@ -192,6 +192,7 @@ func main() {
 
 	configviper.SetConfigName("config") // name of config file (without extension)
 	configviper.AddConfigPath(".")      // path to look for the config file in
+	configviper.AddConfigPath("/Users/jimmies/etsy-github/etsy")      // path to look for the config file in
 
 	err := configviper.ReadInConfig()
 	if err != nil {
